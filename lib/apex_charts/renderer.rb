@@ -40,7 +40,7 @@ module ApexCharts
               #{indent(js)}
             };
             if (window.addEventListener) {
-              window.addEventListener("load", createChart, true);
+              window.addEventListener("turbolinks:load", createChart, true);
             } else if (window.attachEvent) {
               window.attachEvent("onload", createChart);
             } else {
