@@ -2,13 +2,10 @@
 
 require 'simplecov'
 
-unless ENV['CI']
-  SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
-end
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter unless ENV['CI']
 
 SimpleCov.start do
   add_filter ['/spec/', '/lib/apexcharts/support', '/examples/']
-  maximum_coverage_drop 1
 end
 
 RSpec.configure do |config|
