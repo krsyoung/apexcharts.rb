@@ -36,15 +36,18 @@ module ApexCharts
       if defer?
         <<~DEFERRED
           (function() {
-            var createChart = function() {
-              #{indent(js)}
+            if (document.documentElement.hasAttribute("data-turbolinks-preview")) return;
+            if (document.documentElement.hasAttribute("data-turbo-preview")) return;
+            var createChart = function() { 
+              #{js}; 
+              window.removeEventListener("turbo:load", createChart, true);  
+              window.removeEventListener("turbolinks:load", createChart, true);  
             };
-            if (window.addEventListener) {
-              window.addEventListener("turbolinks:load", createChart, true);
-            } else if (window.attachEvent) {
-              window.attachEvent("onload", createChart);
-            } else {
+            if ("ApexCharts" in window) {
               createChart();
+            } else {
+              window.addEventListener("turbo:load", createChart, true);
+              window.addEventListener("turbolinks:load", createChart, true);
             }
           })();
         DEFERRED
@@ -52,7 +55,7 @@ module ApexCharts
         js
       end
     end
-
+    
     def substitute_function_object(json)
       json.gsub(%r[{"function":{"args":"(?<args>.*?)","body":"(?<body>.*?)"}}]) do
         body = "\"#{$~&.[](:body)}\"".undump
