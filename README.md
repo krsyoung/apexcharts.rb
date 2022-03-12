@@ -58,8 +58,8 @@ Organization/Company                                                   | Use Cas
 This README might not be for the version you use.  
 Choose the right README:
 
-> [v0.1.11] | [v0.1.10] | [v0.1.9] | [v0.1.8] | [v0.1.7] | [v0.1.6] |
-> [v0.1.5] | [v0.1.4] | [v0.1.3] | [v0.1.2] | [v0.1.1]
+> [v0.2.0] | [v0.1.11] | [v0.1.10] | [v0.1.9] | [v0.1.8] | [v0.1.7] |
+> [v0.1.6] | [v0.1.5] | [v0.1.4] | [v0.1.3] | [v0.1.2] | [v0.1.1]
 
 ## Table of Contents
 
@@ -103,7 +103,6 @@ Choose the right README:
   - [Formatter Function](#formatter-function)
   - [Defer Chart Rendering](#defer-chart-rendering)
   - [Render with a script whose type is module](#render-with-a-script-whose-type-is-module)
-- [Schema](#schema)
 - [Reusable Custom Palette](#reusable-custom-palette)
 - [Use Alongside Other Charting Libraries](#use-alongside-other-charting-libraries)
   - [Alongside Chartkick](#alongside-chartkick)
@@ -117,7 +116,7 @@ Choose the right README:
   - [Plain HTML+ERB (Without Framework)](#plain-htmlerb-without-framework)
 - [Contributing](#contributing)
 - [License](#license)
-- [Like the charts?](#like-the-charts)
+- [Articles](#articles)
 
 
 ## Usage
@@ -766,23 +765,6 @@ option `module: true`.
 ```
 
 
-## Schema
-
-To use [dry-schema] as an alternative options schema, you can specify the following config
-before calling your charts:
-
-```ruby
-ApexCharts.config.schema = :dry_schema
-```
-
-or
-
-```ruby
-ApexCharts.configure do |config|
-  config.schema = :dry_schema
-end
-```
-
 ## Reusable Custom Palette
 
 To create palettes to be used anywhere on your any parts of your app, you can use
@@ -1004,9 +986,9 @@ The gem is available as open source under the terms of the
 
 
 [ApexCharts.JS]: https://github.com/apexcharts/apexcharts.js
-[dry-schema]: https://github.com/dry-rb/dry-schema
 
 
+[v0.2.0]: https://github.com/styd/apexcharts.rb/blob/v0.2.0/README.md
 [v0.1.11]: https://github.com/styd/apexcharts.rb/blob/v0.1.11/README.md
 [v0.1.10]: https://github.com/styd/apexcharts.rb/blob/v0.1.10/README.md
 [v0.1.9]: https://github.com/styd/apexcharts.rb/blob/v0.1.9/README.md
